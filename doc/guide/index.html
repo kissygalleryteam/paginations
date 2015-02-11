@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>paginations</title>
+    <link rel="stylesheet" href="http://cdn.staticfile.org/twitter-bootstrap/3.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://docs.kissyui.com/1.4/source/guideline/templates/assets/com-prettify.css">
+    <link rel="stylesheet" href="http://docs.kissyui.com/1.4/source/guideline/templates/assets/com.css">
+    <script src="http://cdn.staticfile.org/jquery/2.1.1-rc2/jquery.min.js"></script>
+    <script src="http://cdn.staticfile.org/twitter-bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <script src="http://cdn.staticfile.org/prettify/r298/prettify.min.js"></script>
+    <script src="http://g.tbcdn.cn/kissy/k/1.4.8/seed-min.js" data-config="{combine:true}"></script>
+  </head>
+  <body data-spy="scroll" data-target=".bs-docs-sidebar">
+    <div id="header"><a href="http://docs.kissyui.com/" class="logo">kissy</a>
+      <nav><a href="http://docs.kissyui.com/1.4/docs/html/coms.html">优秀组件推荐</a></nav>
+    </div>
+    <div class="container-fluid">
+      <div class="row-fluid">
+        <div class="span3 bs-docs-sidebar">
+          <ul data-spy="affix" data-offset-top="0" class="nav nav-list bs-docs-sidenav"></ul>
+        </div>
+        <div class="span9 bs-docs-content">
+          <h1 data-id="undefined" class="title">paginations</h1>
+          <p class="author-wrapper"><span>组件有问题？旺旺联系作者：</span>
+          </p>
+          <div class="common-link"><a href="../demo/index.html" target="_blank" class="demo">示例</a><a href="https://github.com/kissygalleryteam/paginations" target="_blank" class="source">源码</a></div>
+          <p class="com-info"><span class="info-label">View</span><span data-com="paginations" class="J_View">4504</span></p>
+          <p class="com-info"><span class="info-label">kissy版本</span><span>1.4.X</span>
+          </p><h2 id="-">综述</h2>
+<p>Paginations分页</p>
+<p><img src="http://gtms02.alicdn.com/tps/i2/TB1DApgHXXXXXbOXXXXFvIM3VXX-434-180.png" alt="http://gtms02.alicdn.com/tps/i2/TB1DApgHXXXXXbOXXXXFvIM3VXX-434-180.png"></p>
+<h2 id="-">初始化组件</h2>
+<pre><code>//皮肤文件建议直接拿源码的less文件根据自己业务定制化使用    
+S.use(&#39;kg/paginations/1.0.0/index,kg/paginations/1.0.0/index.css&#39;, function (S, Pagination) {
+    var pagination = new Pagination({
+        $container: &#39;#page&#39;,
+        totalPage: 15
+    });
+});
+</code></pre><h2 id="api-">API说明</h2>
+<h3 id="-">属性</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">名称</th>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">默认值</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">$container</td>
+<td style="text-align:left">String/NodeList</td>
+<td style="text-align:left">&#39;#J_VCPagination&#39;</td>
+<td style="text-align:left">容器</td>
+</tr>
+<tr>
+<td style="text-align:left">currentPage</td>
+<td style="text-align:left">Number</td>
+<td style="text-align:left">1</td>
+<td style="text-align:left">当前页</td>
+</tr>
+<tr>
+<td style="text-align:left">totalPage</td>
+<td style="text-align:left">Number</td>
+<td style="text-align:left">10</td>
+<td style="text-align:left">总页数</td>
+</tr>
+<tr>
+<td style="text-align:left">showPrevAndNext</td>
+<td style="text-align:left">Boolean</td>
+<td style="text-align:left">true</td>
+<td style="text-align:left">显示上下页</td>
+</tr>
+<tr>
+<td style="text-align:left">showNumbers</td>
+<td style="text-align:left">Boolean</td>
+<td style="text-align:left">true</td>
+<td style="text-align:left">显示中间页码，如果要设置页码连续性，请参考<strong>continuity</strong>属性</td>
+</tr>
+<tr>
+<td style="text-align:left">showSkip</td>
+<td style="text-align:left">Boolean</td>
+<td style="text-align:left">true</td>
+<td style="text-align:left">显示跳转到xx页区域</td>
+</tr>
+<tr>
+<td style="text-align:left">prevAndNextText</td>
+<td style="text-align:left">Array</td>
+<td style="text-align:left">[&#39;&lt;&#39;,&#39;&gt;&#39;]</td>
+<td style="text-align:left">上下页按钮文案</td>
+</tr>
+<tr>
+<td style="text-align:left">tpl</td>
+<td style="text-align:left">Function</td>
+<td style="text-align:left"></td>
+<td style="text-align:left">渲染模板，基于XTepmlate的预编译后文件，可以自定义模块，详情查看源码tpl.xtpl，满足文案修改</td>
+</tr>
+<tr>
+<td style="text-align:left">continuity</td>
+<td style="text-align:left">Array</td>
+<td style="text-align:left">[2, 2, 2, 0]</td>
+<td style="text-align:left">中间页码连续性，请看下方页码连续性详解</td>
+</tr>
+<tr>
+<td style="text-align:left">autoRender</td>
+<td style="text-align:left">Boolean</td>
+<td style="text-align:left">true</td>
+<td style="text-align:left">自动渲染，如果是后端直接输出结构，设置false</td>
+</tr>
+<tr>
+<td style="text-align:left">freeze</td>
+<td style="text-align:left">Boolean</td>
+<td style="text-align:left">false</td>
+<td style="text-align:left">冻结组件，即使各按钮无效(用于加载中处理)，详情查看demo</td>
+</tr>
+</tbody>
+</table>
+<h4 id="continuity-">continuity详解</h4>
+<p>中间页面显示的连续性 [开始连续页码 , 当期页前面的连续页码 , 当期页后面的连续页码 , 结束的连续页码] or []代表全部连续。如果当前页码处于开始和结束连续页码中，会特殊处理。</p>
+<p>demo(共20页，当前为10)，[1,2,3,4]代表下方</p>
+<p>[1]...[8][9]<strong>[10]</strong>[11][12][13]...[17][18][19][20]</p>
+<h3 id="-">方法</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">名称</th>
+<th style="text-align:left">参数</th>
+<th style="text-align:left">返回值</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><strong>skip</strong></td>
+<td style="text-align:left">page :Number/String</td>
+<td style="text-align:left">/</td>
+<td style="text-align:left">跳转到page页</td>
+</tr>
+<tr>
+<td style="text-align:left">show</td>
+<td style="text-align:left">/</td>
+<td style="text-align:left">/</td>
+<td style="text-align:left">显示组件</td>
+</tr>
+<tr>
+<td style="text-align:left">hide</td>
+<td style="text-align:left">/</td>
+<td style="text-align:left">/</td>
+<td style="text-align:left">隐藏组件</td>
+</tr>
+<tr>
+<td style="text-align:left">destroy</td>
+<td style="text-align:left">/</td>
+<td style="text-align:left">/</td>
+<td style="text-align:left">析构</td>
+</tr>
+<tr>
+<td style="text-align:left">getXXX和setXXX</td>
+<td style="text-align:left">/</td>
+<td style="text-align:left">/</td>
+<td style="text-align:left">各属性通过getter和setter来获取,如getCurrentPage</td>
+</tr>
+</tbody>
+</table>
+<h3 id="-">事件</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">名称</th>
+<th style="text-align:left">参数</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">before:skip</td>
+<td style="text-align:left">ev.page 需要跳转的页码</td>
+<td style="text-align:left">跳转到指定页码前触发，<strong>通过return false来阻止渲染</strong></td>
+</tr>
+<tr>
+<td style="text-align:left">skip</td>
+<td style="text-align:left">ev.page 需要跳转的页码</td>
+<td style="text-align:left">跳转到指定页码后触发</td>
+</tr>
+</tbody>
+</table>
+
+          <div style="display:none;"><script type="text/javascript" src="http://tajs.qq.com/stats?sId=36378479" charset="UTF-8"></script></div>
+          <script src="http://docs.kissyui.com/1.4/source/guideline/templates/assets/com.js"></script>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
