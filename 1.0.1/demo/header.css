@@ -1,0 +1,17 @@
+body {
+    padding: 0 !important;
+    margin: 0 !important;
+}
+h2:first-child {
+    display: block !important;
+    padding: 0 !important;
+    margin: 0 0 30px 0 !important;
+    height: 75px !important;
+    line-height: 75px !important;
+    text-indent: 440px !important;
+    font-size: 24px !important;
+    font-weight: bold !important;
+    font-family: tahoma,arial,'Hiragino Sans GB',\5b8b\4f53,sans-serif !important;
+    white-space: nowrap !important;
+    background: #fa9219 url(http://gtms01.alicdn.com/tps/i1/TB10f_xHXXXXXbiXFXXT0gMOXXX-347-64.png) no-repeat 50px center !important;
+}
