@@ -1,1 +1,1 @@
-KISSY.add("kg/paginations/1.0.0/custom-render",["./custom","kg/xtemplate/3.3.3/runtime"],function(t,e,n,r){var u=e("./custom"),a=e("kg/xtemplate/3.3.3/runtime"),m=new a(u);r.exports=function(){return m.render.apply(m,arguments)}});
+KISSY.add("kg/paginations/1.0.1/custom-render",["./custom","kg/xtemplate/3.3.3/runtime"],function(t,e,n,r){var u=e("./custom"),a=e("kg/xtemplate/3.3.3/runtime"),m=new a(u);r.exports=function(){return m.render.apply(m,arguments)}});

@@ -1,4 +1,4 @@
-KISSY.add('kg/paginations/1.0.0/custom-render',["./custom","kg/xtemplate/3.3.3/runtime"],function(S ,require, exports, module) {
+KISSY.add('kg/paginations/1.0.1/custom-render',["./custom","kg/xtemplate/3.3.3/runtime"],function(S ,require, exports, module) {
 
 
 var tpl = require("./custom");

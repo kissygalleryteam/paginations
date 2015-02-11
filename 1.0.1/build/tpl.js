@@ -1,4 +1,4 @@
-KISSY.add('kg/paginations/1.0.0/tpl',[],function(S ,require, exports, module) {
+KISSY.add('kg/paginations/1.0.1/tpl',[],function(S ,require, exports, module) {
 
 
 var ret = module.exports = function tpl(undefined){
