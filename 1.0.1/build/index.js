@@ -1,4 +1,4 @@
-KISSY.add('kg/paginations/1.0.1/index',["node","base","kg/xtemplate/3.3.3/runtime","./tpl"],function(S ,require, exports, module) {
+KISSY.add('kg/paginations/1.0.0/index',["node","base","kg/xtemplate/3.3.3/runtime","./tpl"],function(S ,require, exports, module) {
  var $ = require('node').all;
 var Base = require('base');
 var XTR = require("kg/xtemplate/3.3.3/runtime");
@@ -244,7 +244,7 @@ var Paginations = Base.extend({
     ATTRS: {
         //包裹容器
         $container: {
-            value: '#J_Pagination'
+            value: '#J_VCPagination'
         },
         //跳转输入框
         $skipNumInput: {

@@ -196,7 +196,7 @@
         S.config({
             packages: [
                 {
-                    name: "kg/paginations/1.0.1",
+                    name: "kg/paginations/1.0.0",
                     path: debugPath,
                     charset: "utf-8"
                 }
@@ -204,7 +204,7 @@
         });
     }
 
-    S.use('kg/paginations/1.0.1/index,kg/paginations/1.0.1/custom,kg/paginations/1.0.1/index.css', function (S, Pagination, customTpl) {
+    S.use('kg/paginations/1.0.0/index,kg/paginations/1.0.0/custom,kg/paginations/1.0.0/index.css', function (S, Pagination, customTpl) {
         new Pagination({
             $container: '#page1',
             currentPage: 10,

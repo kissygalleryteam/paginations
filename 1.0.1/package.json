@@ -1,6 +1,6 @@
 {
     "name": "paginations",
-    "version": "1.0.1",
+    "version": "1.0.0",
     "devDependencies": {
         "bufferstreams": "0.0.2",
         "gulp": "^3.8.7",
