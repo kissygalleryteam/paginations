@@ -1,0 +1,1 @@
+KISSY.add("kg/vc-notifications/1.0.2/lib/main-min",[],function(){var i=(n("node").all,n("base"));e.exports=i.extend({initializer:function(){}},{ATTRS:{}})});

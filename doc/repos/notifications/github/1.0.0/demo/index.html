@@ -1,0 +1,125 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>VcNotifications的demo</title>
+    <script src="http://g.tbcdn.cn/kissy/k/1.4.8/seed-min.js" charset="utf-8"></script>
+</head>
+<body>
+<h2>VcNotifications的demo</h2>
+
+<div style="border-bottom: 1px solid #000; padding-bottom: 50px;">
+  <h3>第一组demo</h3>
+  <button id="btn">简单用法</button>
+  <button id="btn2">box有标题和内容</button>
+  <button id="btn3">box有图片、标题和内容</button>
+  <button id="btn4">box有图片、标题和内容：修改内容</button>
+  <button id="btn5">box有图片、标题和内容：修改标题和内容</button>
+  <button id="btn6">修改box的背景</button>
+</div>
+
+<div style="border-bottom: 1px solid #000; padding-bottom: 50px;">
+  <h3>第二组demo</h3>
+  <button id="btn7" style="float: right">显示在左边</button>
+</div>
+
+<div style="border-bottom: 1px solid #000; padding-bottom: 50px;">
+  <h3>第三组demo</h3>
+  <button id="btn8">box的显示时间和消失间隙时间，右边划出</button>
+  <button id="btn9"  style="float: right">box左边划出</button>
+</div>
+<script>
+    var S = KISSY;
+    if (S.Config.debug) {
+        var debugPath = "http://localhost:8787/";
+        S.config({
+            packages:[
+                {
+                    name:"kg/vc-notifications/1.0.0",
+                    path:debugPath,
+                    charset:"utf-8"
+                }
+            ]
+        });
+    }
+
+    S.use('kg/vc-notifications/1.0.0/index, node', function (S, VcNotifications, Node) {
+      /**
+       * 第一组使用情况
+       * @type {VcNotifications}
+       */
+      var vcNotify = new VcNotifications();
+
+      //简单用法
+      Node.one('#btn').on('click', function(){
+        vcNotify.notify('该项内容用于法院支付宝认证，请填写未过期的、正确的信息');
+      });
+
+      //有标题和内容
+      vcNotify.createNoticeDom({
+        mPartTitle: "公告",
+        mPartMsg: "该项内容用于法院支付宝认证，请填写未过期的、正确的信息"
+      }, 'title_content');
+      Node.one('#btn2').on('click', function(){
+        vcNotify.notify(null, 'title_content');
+      });
+
+      //有图片、标题和内容
+      vcNotify.createNoticeDom({
+        boxCls: 'success',
+        mPartImg: 'http://img.f2e.taobao.net/img.png?x=48x48.jpg',
+        mPartTitle: "公告",
+        mPartMsg: "该项内容用于法院支付宝认证，请填写未过期的、正确的信息"
+      }, 'img_title_content');
+
+      Node.one('#btn3').on('click', function(){
+        vcNotify.notify(null, 'img_title_content');
+      });
+
+      Node.one('#btn4').on('click', function(){
+        vcNotify.notify('btn4 test', 'img_title_content');
+      });
+
+      Node.one('#btn5').on('click', function(){
+        vcNotify.notify({mPartTitle:'notice', mPartMsg: 'btn5 test'}, 'img_title_content');
+      });
+
+      Node.one('#btn6').on('click', function(){
+        vcNotify.notify({boxCls:'warning'},'title_content');
+      });
+
+
+      /**
+       * 第二组使用情况
+       * @type {VcNotifications}
+       */
+      var leftVcNotify = new VcNotifications({cls: 'left'});
+      Node.one('#btn7').on('click', function(){
+        leftVcNotify.notify('this is a test');
+      });
+
+
+      /**
+       * 第三组使用情况
+       * @type {VcNotifications}
+       */
+      var effectVcNotify1 = new VcNotifications({stayTime: 5000, gapTime: 3000, boxEffect: 'rs'});
+      Node.one('#btn8').on('click', function(){
+        effectVcNotify1.notify('this is a test');
+      });
+
+      /**
+       * 第三组使用情况
+       * @type {VcNotifications}
+       */
+      var effectVcNotify2 = new VcNotifications({cls: 'left',boxEffect: 'ls'});
+      Node.one('#btn9').on('click', function(){
+        effectVcNotify2.notify('this is a test');
+      });
+
+
+    })
+</script>
+</body>
+</html>
+
