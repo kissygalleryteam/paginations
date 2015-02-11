@@ -6,7 +6,7 @@ Paginations分页
 
 ## 初始化组件
 	//皮肤文件建议直接拿源码的less文件根据自己业务定制化使用	
-    S.use('kg/paginations/1.0.0/index,kg/paginations/1.0.0/index.css', function (S, Pagination) {
+    S.use('kg/paginations/1.0.1/index,kg/paginations/1.0.1/index.css', function (S, Pagination) {
         var pagination = new Pagination({
         	$container: '#page',
         	totalPage: 15
@@ -19,7 +19,7 @@ Paginations分页
 
 |名称|类型|默认值|描述|
 |:---------------|:--------|:----|:----------|
-|$container|String/NodeList|'#J_VCPagination'|容器|
+|$container|String/NodeList|'#J_Pagination'|容器|
 |currentPage|Number|1|当前页|
 |totalPage|Number|10|总页数|
 |showPrevAndNext|Boolean|true|显示上下页|

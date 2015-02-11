@@ -243,7 +243,7 @@ var Paginations = Base.extend({
     ATTRS: {
         //包裹容器
         $container: {
-            value: '#J_VCPagination'
+            value: '#J_Pagination'
         },
         //跳转输入框
         $skipNumInput: {
