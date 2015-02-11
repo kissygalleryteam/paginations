@@ -1,0 +1,21 @@
+<div class="paginations">
+    {{#each(items)}}
+    {{#if(this.type===itemType.PREV)}}
+    <a href="#" class="item {{sel.ITEM}} {{cls.PREV}}{{#if(this.disabled)}} {{cls.DISABLED}}{{/if}}" aria-label="上一页">上一页</a>
+    {{elseif(this.type===itemType.NEXT)}}
+    <a href="#" class="item {{sel.ITEM}} {{cls.NEXT}}{{#if(this.disabled)}} {{cls.DISABLED}}{{/if}}" aria-label="下一页">下一页</a>
+    {{elseif(this.type===itemType.SKIP)}}
+    <span class="skip-wrap">
+        <em>{{this.value}}/{{totalPage}}</em>
+        到第 <input type="text" class="input {{sel.SKIP_INPUT}}" value="{{this.value}}" aria-label="页码输入框"/> 页
+        <button class="{{sel.ITEM}} {{cls.SKIP}}" aria-label="确定跳转">我跳</button>
+    </span>
+    {{elseif(this.type===itemType.DOT)}}
+    <span class="item dot">...</span>
+    {{elseif(this.current)}}
+    <span class="item current">{{this.value}}</span>
+    {{else}}
+    <a href="#" class="item {{sel.ITEM}}" data-page="{{this.value}}">{{this.value}}</a>
+    {{/if}}
+    {{/each}}
+</div>
