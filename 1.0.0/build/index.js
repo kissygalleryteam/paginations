@@ -69,7 +69,7 @@ var Paginations = Base.extend({
         var totalPage = self.get('totalPage'),
             currentPage = self.get('currentPage'),
             continuity = self.get('continuity'),
-            showNextAndPrev = self.get('showNextAndPrev'),
+            showPrevAndNext = self.get('showPrevAndNext'),
             showNumbers = self.get('showNumbers'),
             showSkip = self.get('showSkip'),
             items = [];
@@ -123,7 +123,7 @@ var Paginations = Base.extend({
             }
         }
         //上下页
-        if (showNextAndPrev) {
+        if (showPrevAndNext) {
             //下一页
             items.push({
                 type: ITEM_TYPE.NEXT,
@@ -148,7 +148,8 @@ var Paginations = Base.extend({
             items: items,
             itemType: ITEM_TYPE,
             cls: CLS,
-            sel: SEL
+            sel: SEL,
+            prevAndNextText: self.get('prevAndNextText')
         }));
     },
     _bind: function () {
@@ -265,7 +266,7 @@ var Paginations = Base.extend({
             value: tpl
         },
         //显示上下页
-        showNextAndPrev: {
+        showPrevAndNext: {
             value: true
         },
         //显示中间页码
@@ -275,6 +276,10 @@ var Paginations = Base.extend({
         //显示跳转输入框
         showSkip: {
             value: true
+        },
+        //上下页文案内容
+        prevAndNextText: {
+            value: ['<','>']
         },
         //中间页面显示的连续性 数组[上一页后面的连续页码、当期页前面的连续页码、当期页后面的连续页码、下一页前面的连续页码] or []代表全部连续
         continuity: {
