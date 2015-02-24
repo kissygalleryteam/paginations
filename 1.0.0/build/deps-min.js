@@ -1,1 +1,0 @@
-KISSY.config("requires",{"kg/paginations/1.0.0/custom-render":["./custom","kg/xtemplate/3.3.3/runtime"],"kg/paginations/1.0.0/index":["node","base","kg/xtemplate/3.3.3/runtime","./tpl"],"kg/paginations/1.0.0/tpl-render":["./tpl","kg/xtemplate/3.3.3/runtime"],"kg/paginations/1.0.0/lib/main":["node","base"]});

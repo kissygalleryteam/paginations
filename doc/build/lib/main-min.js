@@ -1,1 +1,0 @@
-KISSY.add("kg/paginations/1.0.1/lib/main",["node","base"],function(n,i,a,e){var o=(i("node").all,i("base"));e.exports=o.extend({initializer:function(){}},{ATTRS:{}})});
